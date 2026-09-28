@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: rgba(239, 246, 250, 1);
+  overflow-x: hidden;
+}
+
+.navbar {
+  background-color: rgba(81, 140, 196, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255, 244, 207, 1);
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: rgba(245, 207, 92, 1);
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: rgba(174, 210, 238, 1);
+}

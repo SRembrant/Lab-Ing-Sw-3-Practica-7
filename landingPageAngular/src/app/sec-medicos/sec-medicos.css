@@ -1,0 +1,59 @@
+/* Efecto hover para la lista de especialidades */
+.list-group-item:hover{
+    background-color: rgba(174, 210, 238, 1);
+    color: rgba(54, 103, 153, 1);
+    cursor: pointer;
+}
+
+/* Margen inferior para los títulos de las tarjetas de los médicos */
+h5 {
+    margin-bottom: 0.5rem;
+    color: rgba(54, 103, 153, 1);
+}
+
+#seccion2 {
+    background-color: rgba(239, 246, 250, 1);
+    color: rgba(45, 62, 75, 1);
+}
+
+#seccion2 h2,
+#seccion2 h3 {
+    color: rgba(54, 103, 153, 1);
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(174, 210, 238, 1);
+    color: rgba(45, 62, 75, 1);
+}
+
+#descripcionEspecialidad {
+    color: rgba(91, 108, 121, 1);
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(174, 210, 238, 1);
+    box-shadow: 0 2px 8px rgba(91, 155, 213, 0.12);
+    width: 100%;
+}
+
+.card-title {
+    color: rgba(54, 103, 153, 1);
+}
+
+.card-text {
+    color: rgba(91, 108, 121, 1);
+}
+
+.btn-success {
+    background-color: rgba(245, 207, 92, 1);
+    border-color: rgba(218, 175, 52, 1);
+    color: rgba(45, 62, 75, 1);
+}
+
+.btn-success:hover {
+    background-color: rgba(218, 175, 52, 1);
+    border-color: rgba(218, 175, 52, 1);
+    color: rgba(45, 62, 75, 1);
+}

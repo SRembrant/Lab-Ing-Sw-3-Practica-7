@@ -1,0 +1,336 @@
+<!--Seccion 3: Formulario de registro de pacientes-->
+<div class="container-fluid" id="seccion3">
+
+  <h2 class="text-center mb-4">
+    <br>
+    Registro de nuevos Pacientes
+  </h2>
+
+  <p class="lead mb-4">
+    Este formulario permite registrar nuevos pacientes en el sistema
+    de manera sencilla.
+  </p>
+
+
+  <!--notificacion-->
+
+  @if (mostrarNotificacion()) {
+
+    <div
+        class="notificaciones-contenedor"
+        role="status"
+        aria-live="polite"
+    >
+        <div class="notificacion notificacion-exito">
+        {{ mensajeNotificacion() }}
+        </div>
+    </div>
+
+    }
+
+
+
+  <form
+    [formGroup]="formPaciente"
+    (ngSubmit)="registrarPaciente()"
+    novalidate
+  >
+
+
+
+    <div class="mb-3">
+
+      <label
+        for="nombresPaciente"
+        class="form-label form-check-label"
+      >
+        Nombres
+      </label>
+
+      <input
+        type="text"
+        id="nombresPaciente"
+        class="form-control"
+        placeholder="Ingrese sus nombres"
+        formControlName="nombres"
+        autocomplete="given-name"
+        [class.is-invalid]="mostrarError('nombres')"
+      >
+
+      @if (mostrarError('nombres')) {
+
+        <div
+          class="form-text text-danger"
+          id="errorNombresPaciente"
+        >
+
+          @if (nombres?.hasError('required')) {
+
+            <span>
+              El nombre es obligatorio.
+            </span>
+
+          }
+
+          @if (
+            nombres?.hasError('minlength') ||
+            nombres?.hasError('maxlength')
+          ) {
+
+            <span>
+              El nombre debe tener entre 1 y 20 caracteres.
+            </span>
+
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+
+
+    <div class="mb-3">
+
+      <label
+        for="apellidosPaciente"
+        class="form-label form-check-label"
+      >
+        Apellidos
+      </label>
+
+      <input
+        type="text"
+        id="apellidosPaciente"
+        class="form-control"
+        placeholder="Ingrese sus apellidos"
+        formControlName="apellidos"
+        autocomplete="family-name"
+        [class.is-invalid]="mostrarError('apellidos')"
+      >
+
+      @if (mostrarError('apellidos')) {
+
+        <div
+          class="form-text text-danger"
+          id="errorApellidosPaciente"
+        >
+
+          @if (apellidos?.hasError('required')) {
+
+            <span>
+              El apellido es obligatorio.
+            </span>
+
+          }
+
+          @if (
+            apellidos?.hasError('minlength') ||
+            apellidos?.hasError('maxlength')
+          ) {
+
+            <span>
+              El apellido debe tener entre 1 y 20 caracteres.
+            </span>
+
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <div class="mb-3">
+
+      <label
+        for="tipoIdPaciente"
+        class="form-label"
+      >
+        Tipo de Identificación
+      </label>
+
+      <select
+        id="tipoIdPaciente"
+        class="form-control"
+        formControlName="tipoId"
+        [class.is-invalid]="mostrarError('tipoId')"
+      >
+
+        <option value="">
+          Seleccione un tipo de identificación
+        </option>
+
+        <option value="cc">
+          Cédula de Ciudadanía
+        </option>
+
+        <option value="ti">
+          Tarjeta de Identidad
+        </option>
+
+        <option value="ce">
+          Cédula de Extranjería
+        </option>
+
+        <option value="pas">
+          Pasaporte
+        </option>
+
+      </select>
+
+
+      @if (mostrarError('tipoId')) {
+
+        <div
+          class="form-text text-danger"
+          id="errorTipoIdPaciente"
+        >
+          Debe seleccionar un tipo de identificación.
+        </div>
+
+      }
+
+    </div>
+
+
+
+    <div class="mb-3">
+
+      <label
+        for="emailPaciente"
+        class="form-label"
+      >
+        Correo Electrónico
+      </label>
+
+      <input
+        type="email"
+        id="emailPaciente"
+        class="form-control"
+        placeholder="ejemplo@correo.com"
+        formControlName="correo"
+        autocomplete="email"
+        [class.is-invalid]="mostrarError('correo')"
+      >
+
+
+      @if (mostrarError('correo')) {
+
+        <div
+          class="form-text text-danger"
+          id="errorEmailPaciente"
+        >
+
+          @if (correo?.hasError('required')) {
+
+            <span>
+              El correo es obligatorio.
+            </span>
+
+          }
+
+          @if (correo?.hasError('pattern')) {
+
+            <span>
+              El correo debe tener la estructura:
+              ejemplo@email.com
+            </span>
+
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+
+
+    <fieldset
+      class="radio-group"
+      id="select-genero"
+    >
+
+      <legend class="fs-6">
+        Género:
+      </legend>
+
+
+      <label>
+
+        <input
+          type="radio"
+          id="femenino"
+          name="genero"
+          formControlName="genero"
+          value="femenino"
+        >
+
+        Femenino
+
+      </label>
+
+
+      <label>
+
+        <input
+          type="radio"
+          id="masculino"
+          name="genero"
+          formControlName="genero"
+          value="masculino"
+        >
+
+        Masculino
+
+      </label>
+
+
+      <label>
+
+        <input
+          type="radio"
+          id="otro"
+          name="genero"
+          formControlName="genero"
+          value="otro"
+        >
+
+        Otro
+
+      </label>
+
+
+      @if (mostrarError('genero')) {
+
+        <div
+          class="form-text text-danger"
+          id="errorGenero"
+        >
+          Debe seleccionar un género.
+        </div>
+
+      }
+
+    </fieldset>
+
+
+    <div class="d-flex justify-content-start">
+
+      <button
+        type="submit"
+        id="btnAgregarPaciente"
+        class="btn btn-primary"
+        [disabled]="formPaciente.invalid"
+      >
+        Agregar Paciente
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,17 @@
+#seccion1 {
+  background-color: rgba(239, 246, 250, 1);
+}
+
+#seccion1 h2 {
+  color: rgba(54, 103, 153, 1);
+}
+
+#carouselProductos {
+  border-color: rgba(174, 210, 238, 1);
+  box-shadow: 0 2px 12px rgba(91, 155, 213, 0.15);
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(245, 207, 92, 0.35);
+}

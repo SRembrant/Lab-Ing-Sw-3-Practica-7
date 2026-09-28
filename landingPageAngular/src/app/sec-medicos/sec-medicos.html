@@ -1,0 +1,111 @@
+<!--Seccion 2: Medicos y especialidades-->
+<div class="container-fluid" id="seccion2">
+    <h2>Nuestros Profesionales</h2>  
+
+    <!-- Cuerpo principal con barra lateral y medicos -->
+    <div class="row">
+
+        <!-- Barra lateral (especialidades) -->
+        <aside class="col-12 col-sm-2 col-md-4">
+            <h3>Especialidades</h3>
+            <ul class="list-group">
+                <!-- Generación dinámica de la lista con enlace de eventos nativo -->
+                @for (esp of listaEspecialidades; track esp.id) {
+                    <li [id]="esp.id" 
+                        class="list-group-item text-truncate" 
+                        style="cursor: pointer;"
+                        (click)="mostrarDescripcion(esp.descripcion)">
+                        {{ esp.nombre }}
+                    </li>
+                }
+            </ul>
+            <!-- Renderizado dinámico e instantáneo de la señal -->
+            <p id="descripcionEspecialidad" class="mt-3 text-muted fw-medium">
+                {{ descripcionActual() }}
+            </p>
+        </aside>
+
+        <!-- Sección de tarjetas de medicos -->
+        <main class="col-12 col-sm-10 col-md-8">
+            <div class="row g-3">
+                <!-- Medico 1 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_001.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dr. Joaquin Salazar</h5>
+                            <p class="card-text">Especialista en Fisioterapia</p>
+                            <p class="card-text">Muévete libre, vive sin dolor.</p>	
+                            <button class="btn btn-success  mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+
+                <!-- Medico 2 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_002.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dr. Jose Ignacio</h5>
+                            <p class="card-text">Especialista en Quiropraxia</p>	
+                            <p class="card-text">Alinea tu espalda, alivia tu vida.</p>	
+                            <button class="btn btn-success  mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+
+                <!-- Medico 3 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_003.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dra. Clara Zuñiga</h5>
+                            <p class="card-text">Especialista en Terapia Neural</p>
+                            <p class="card-text">Reinicia tus nervios, apaga el dolor.</p>	
+                            <button class="btn btn-success mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+
+                <!-- Medico 4 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_004.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dra. Ibis Gonzales</h5>
+                            <p class="card-text">Especialista en Nutricion y Dieta</p>
+                            <p class="card-text">Sana tu cuerpo desde el plato.</p>	
+                            <button class="btn btn-success mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+
+                <!-- Medico 5 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_005.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dr. Julian Rubio</h5>
+                            <p class="card-text">Especialista en Pediatria</p>
+                            <p class="card-text">Cuidamos sus sonrisas, protegemos su crecimiento.</p>	
+                            <button class="btn btn-success mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+
+                <!-- Medico 6 -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+                    <div class="card h-100">
+                        <img class="mx-auto" src="./imgMedicos/imagen_medico_006.png" alt="imagen medico" width="170" height="110">
+                        <div class="card-body d-flex flex-column"> 
+                            <h5 class="card-title">Dra. Ana Millan</h5>
+                            <p class="card-text">Especialista en Terapia Neural</p>
+                            <p class="card-text">Alivio profundo donde el dolor se esconde.</p>	
+                            <button class="btn btn-success mt-auto"> Agendar Cita </button>
+                        </div>							
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
